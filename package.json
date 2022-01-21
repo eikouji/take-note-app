@@ -1,0 +1,21 @@
+{
+  "name": "take-note-app",
+  "version": "1.0.0",
+  "description": "A note taking app that uses express.js to act as a\r server to save and display notes taken by the user.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eikouji/take-note-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eikouji/take-note-app/issues"
+  },
+  "homepage": "https://github.com/eikouji/take-note-app#readme"
+}
