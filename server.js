@@ -1,4 +1,4 @@
-const apiRoutes = require('./routs/apiRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 const htmlRoutes = require('./routes/htmlRoutes');
 
@@ -17,10 +17,9 @@ app.use(express.urlencoded({ extended:true }));
 // parse incoming JSON data //
 app.use(express.json());
 
-app.use(express('/api', apiRoutes);
+app.use(express('/api', apiRoutes));
 app.use('/', htmlRoutes);
 
 app.listen(PORT, () => {
     console.log(`API server now on ${PORT}!`);
-});
 });

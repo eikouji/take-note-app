@@ -10,7 +10,7 @@ const { v4: uniqueNoteId } = require('uniqueNoteId');
 // get route //
 
 router.get('/notes', (req, res) => {
-    fs.readFile(".db/db.json", function(err, data) {
+    fs.readFile("./db/db.json", function(err, data) {
         iff (err) throw err;
         var notes = JSON.parse(data);
             res.json(notes)
@@ -46,9 +46,8 @@ router.post('/notes', (req, res) => {
      result = result..filter(({ id }) => id !== req.params.id);
 
      fs.writeFileSync(path.join(__dirname, '../../db/db.json), JSON.stringify(result));
- })
+ };
 
 
  module.exports = router;
 
- 
