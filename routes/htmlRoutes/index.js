@@ -3,7 +3,7 @@ const router = require('express').Router();
 
 // GET route to serve index.html //
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public.index.html")));
+    res.sendFile(path.join(__dirname, "../../public.index.html"));
 });
 
 // GET route to serve notes.html //
