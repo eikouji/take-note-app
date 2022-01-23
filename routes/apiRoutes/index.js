@@ -1,23 +1,45 @@
+const fs = require('fs');
+const path = require('path');
+
 const router = require('express').Router();
-const notes = require('../../apiRoutes.index.js');
+const notes = require('../routes/apiRoutes.index.js');
 
 const { createNewNote, confirmNewNote, deleteNote } = require('../../lib/notes');
 
+
+// add route //
 router.get('/notes', (req, res) => {
-    res.json(notes);
+    fs.readFile("./db/db.json", function(err, data) {
+        if (err) throw err;
+        var notes = JSON.parse(data);
+        res.json(notes)
+    })
 });
+
 
 router.post("/notes", (req, res) => {
-    if (!validateNote(req, res)) res.sendStatus(404);
-    else {
-        createNewNote(req.body, notes);
-        res.json(req.body);
-    }
+  fs.readFile("./db/db.json", function(err, data) {
+      if (err) throw err;
+      var notes = JSON.parse(data);
+      // incoming content will be //
+      // set ID using uniqueNoteId //
+      req.body.id = uniqueNoteId();
+  
+   // if any dada in req.body is not correct, 400 error return // 
+     if (!validateNote(req.body)) {
+         res.status(400).send('The note is not properly formatted.');
+     } else {
+         const note = createNewNote(req.body, notes );
+     }
+
+
+   })
+
 });
 
-router.delete("/notes", (req, res) => {
-    deleteNote(req.body, notes);
-    res.send(`Note with ${req.params.id} has been deleted!.`);
-});
+// delete note // 
+  router.delete('/notes/:id', (req, res) => {
+      
+  })
 
-module.exports = router;
+
