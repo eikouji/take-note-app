@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 3001;
 // this makes API calls work //
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// links to the front end folder //
 app.use(express.static('public'));
 
 // API routes //
