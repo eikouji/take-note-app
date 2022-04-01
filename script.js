@@ -7,7 +7,6 @@ const path = ('path');
 const database = require('../db/db');
 
 // Express and Port establishment //
-
 const PORT = process.env.PORT || 3001;
 
 // this makes API calls work //

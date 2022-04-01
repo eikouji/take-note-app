@@ -1,6 +1,0 @@
-
-
-// GET routes //
-
-// POST routes //
-
