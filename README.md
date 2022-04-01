@@ -13,4 +13,4 @@ Super goal: Add Delete Note feature.
 # URL of working website #
 
 # Heroku Deployment #
-heroku link: https://take-note-eikouji.herokuapp.com/
+heroku link: https://note-taker-36583.herokuapp.com/
